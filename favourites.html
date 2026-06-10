@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY FAVS</title>
+    <link rel="icon" type="image/x-icon" href="エビちゅ イコニック.png">
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+            margin-top: 0px;
+            background-color: #fdf5e6;
+            color: black;
+        }
+        
+        .banner {
+            background: linear-gradient(90deg, #b088be, #a674ca);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5em;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #b088be;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            z-index: 1000;
+        }
+
+        .sidenav a {
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #3c3c3c;
+            display: block;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .sidenav a:hover {
+            background: linear-gradient(90deg, #912f50, #522b47);
+            color: white;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            background-color: #b088be;
+            margin-left: 20px;
+        }
+
+        .dropdown-content a {
+            font-size: 16px;
+            padding: 8px 20px;
+            color: #3c3c3c;
+        }
+
+        .dropdown-content a:hover {
+            background: linear-gradient(90deg, #912f50, #522b47);
+            color: white;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #b088be;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1100;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .sidenav a {
+                font-size: 16px;
+            }
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th {
+            background-color: #912f50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        td {
+            border: 1px solid #912f50;
+            padding: 10px;
+            text-align: center;
+        }
+
+        tr:hover {background-color: #b088be52;}
+
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: #b088be;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">🍓Ellysha's Abode🍓</div>
+    <button class="openbtn" onclick="openNav()">☰</button>
+    <div id="mySidenav" class="sidenav">
+        <span class="closebtn" onclick="closeNav()">&times;</span>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <div class="dropdown">
+        <a href="hobbies.html">Hobbies ▼</a>
+            <div class="dropdown-content">
+                <a href="reading.html">Reading</a>
+                <a href="movies.html">Movies</a>
+                <a href="newthings.html">Trying New Things</a>
+            </div>
+        </div>
+        <a href="favourites.html">My Favourites</a>
+    </div>
+
+    <h1>A List of My Favourites</h1>
+    <p>Basically a whole list of my favourite things</p>
+    <table style="width:60%; margin: 30px auto;">
+            <tr>
+                <th>Movie 🎬</th>
+                <td>The Proposal (2009)</td> 
+            </tr>
+            <tr>
+                <th>TV Series 📽️</th>
+                <td>The Lake (2022)</td> 
+            </tr>
+            <tr>
+                <th>Anime 📺</th>
+                <td>Spy x Family</td> 
+            </tr>
+            <tr>
+                <th>K-drama 🎞️</th>
+                <td>Goblin</td> 
+            </tr>
+            <tr>
+                <th>J-drama 🎥</th>
+                <td>A Calm Sea and Beautiful Days with You</td> 
+            </tr>
+            <tr>
+                <th>Food 🍞</th>
+                <td>Bread</td>
+            </tr>
+            <tr>
+                <th>Drink 🍵</th>
+                <td>Matcha</td>
+            </tr>
+            <tr>
+                <th>Book 📕</th>
+                <td>Beach Read - Emily Henry</td>
+            </tr>
+            <tr>
+                <th>Author 👩🏻</th>
+                <td>Emily Henry</td>
+            </tr>
+            <tr style="background-color: #8ab9f1;">
+                <th>Colour</th>
+                <td>Blue</td>
+            </tr>
+            <tr>
+                <th>Song 🎧</th>
+                <td><a href="https://youtu.be/jmzAf54Re8A?si=w-uQMqWRpWCR807d" target="blank">I Love You, I'm Sorry</a></td>
+            </tr>
+            <tr>
+                <th>Musical Artist 🎙️</th>
+                <td>Gracie Abrams</td>
+            </tr>
+            <tr>
+                <th>Flower 🌸</th>
+                <td>Carnation</td>
+            </tr>
+            <tr>
+                <th>Animal 🦦</th>
+                <td>Otters</td>
+            </tr>
+        </table>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <footer>
+        <p>Copyright © 2026 Ellysha. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEW THINGS</title>
+    <link rel="icon" type="image/x-icon" href="エビちゅ イコニック.png">
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+            margin-top: 0px;
+            background-color: #fdf5e6;
+            color: black;
+        }
+        
+        .banner {
+            background: linear-gradient(90deg, #b088be, #a674ca);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5em;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #b088be;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            z-index: 1000;
+        }
+
+        .sidenav a {
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #3c3c3c;
+            display: block;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .sidenav a:hover {
+            background: linear-gradient(90deg, #912f50, #522b47);
+            color: white;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            background-color: #b088be;
+            margin-left: 20px;
+        }
+
+        .dropdown-content a {
+            font-size: 16px;
+            padding: 8px 20px;
+            color: #3c3c3c;
+        }
+
+        .dropdown-content a:hover {
+            background: linear-gradient(90deg, #912f50, #522b47);
+            color: white;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #b088be;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1100;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .sidenav a {
+                font-size: 16px;
+            }
+        }
+
+        * {box-sizing:border-box}
+
+
+        .slideshow-container {
+            max-width: 600px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .card-text {
+            text-align: center;
+            color: black;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: row;
+            background-color: #fafafa;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 30px auto;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 200px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-content h3 {
+            margin: 0 0 10px;
+            font-size: 1.5em;
+            color: black;
+        }
+
+        .card-content p {
+            margin: 0;
+            color: black;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 500px) {
+            .card {
+                flex-direction: column;
+            }
+            .card img {
+                width: 100%;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: #b088be;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">🍓Ellysha's Abode🍓</div>
+    <button class="openbtn" onclick="openNav()">☰</button>
+    <div id="mySidenav" class="sidenav">
+        <span class="closebtn" onclick="closeNav()">&times;</span>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <div class="dropdown">
+        <a href="hobbies.html">Hobbies ▼</a>
+            <div class="dropdown-content">
+                <a href="reading.html">Reading</a>
+                <a href="movies.html">Movies</a>
+                <a href="newthings.html">Trying New Things</a>
+            </div>
+        </div>
+        <a href="favourites.html">My Favourites</a>
+    </div>
+
+    <h1>I like to try new things</h1>
+    <p>(despite my frequent anxiety and occasional fear)</p>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="georgetown at nite.jpg" style="width:100%">
+            <div class="text">Georgetown from the ferry</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img src="sunset sg merbok.jpg" style="width:100%">
+            <div class="text">Sunset over Sungai Merbok</div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img src="street.jpg" style="width:100%">
+            <div class="text">sungai Petani street art</div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <div class="card">
+        <img src="armenian street.jpg" alt="Bookwall">
+        <div class="card-content">
+            <p>These things don't need to be big. They can be something like trying out different cuisines
+                or solo travelling. These little steps accumulate to something big and I am proud of myself even
+                for the smallest things. I am often hard on myself so I am trying to be more grateful.
+            </p>
+        </div>
+    </div>
+    
+    <div class="card">
+        <img src="im hungry copy.jpg" alt="Bookwall">
+        <div class="card-content">
+            <p>This can also include doing things I don't normally do or finally doing something I've been wanting to do.
+                For instance, talking to strangers and indulging in my impulsive thoughts (not recommended). I know that
+                I have to overcome the fear and anxiety to step out my comfort zone and I try my best, because progress is progress.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+
+
+    </script>
+
+    <footer>
+        <p>Copyright © 2026 Ellysha. All rights reserved.</p>
+    </footer>
+</body>
+</html>

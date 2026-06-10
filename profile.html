@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROFILE</title>
+    <link rel="icon" type="image/x-icon" href="エビちゅ イコニック.png">
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+            margin-top: 0px;
+            background-color: #fdf5e6;
+            color: black;
+        }
+        
+        .banner {
+            background: linear-gradient(90deg, #b088be, #a674ca);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5em;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #b088be;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            z-index: 1000;
+        }
+
+        .sidenav a {
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #3c3c3c;
+            display: block;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .sidenav a:hover {
+            background: linear-gradient(90deg, #912f50, #522b47);
+            color: white;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            background-color: #b088be;
+            margin-left: 20px;
+        }
+
+        .dropdown-content a {
+            font-size: 16px;
+            padding: 8px 20px;
+            color: #3c3c3c;
+        }
+
+        .dropdown-content a:hover {
+            background: linear-gradient(90deg, #912f50, #522b47);
+            color: white;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #b088be;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1100;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .sidenav a {
+                font-size: 16px;
+            }
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            justify-items: center;
+            margin-top: 40px;
+        }
+
+        .portrait {
+            width: 200px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            justify-self: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th {
+            background-color: #912f50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        td {
+            border: 1px solid #912f50;
+            padding: 10px;
+            text-align: center;
+        }
+
+        tr:hover {background-color: #b088be52;}
+
+        @media (max-width: 600px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .portrait {
+                margin: 0 auto;
+            }
+            table {
+                width: 100%;
+                margin: 20px auto;
+            }
+        }
+
+        .card {
+            display: flex;
+            flex-direction: row;
+            background-color: #fafafa;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 2px solid rgba(176, 136, 190, 0.653);
+            max-width: 600px;
+            margin: 30px auto;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 200px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .card video {
+  		    width: 100%;
+  		    height: auto;
+  		    border-radius: 6px;
+        }
+
+        .card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-content h3 {
+            margin: 0 0 10px;
+            font-size: 1.5em;
+            color: black;
+        }
+
+        .card-content p {
+            margin: 0;
+            color: black;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 500px) {
+            .card {
+                flex-direction: column;
+            }
+            .card img {
+                width: 100%;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: #b088be;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">🍓Ellysha's Abode🍓</div>
+    <button class="openbtn" onclick="openNav()">☰</button>
+    <div id="mySidenav" class="sidenav">
+        <span class="closebtn" onclick="closeNav()">&times;</span>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <div class="dropdown">
+        <a href="hobbies.html">Hobbies ▼</a>
+            <div class="dropdown-content">
+                <a href="reading.html">Reading</a>
+                <a href="movies.html">Movies</a>
+                <a href="newthings.html">Trying New Things</a>
+            </div>
+        </div>
+        <a href="favourites.html">My Favourites</a>
+    </div>
+
+    <h1>Here is everything there is to know about me</h1>
+    <div class="container">
+        <img src="me journal.jpg" alt="Portrait" class="portrait">
+
+        <table style="width:60%; margin: 30px auto;">
+            <tr>
+                <th>Name</th>
+                <td>Nur Ellysha Fareena Arfian</td> 
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>20</td>
+            </tr>
+            <tr>
+                <th>Star Sign</th>
+                <td>Scorpio</td>
+            </tr>
+            <tr>
+                <th>Hometown</th>
+                <td>Kota Kinabalu, Sabah</td>
+            </tr>
+            <tr>
+                <th>Dream Occupation</th>
+                <td>Whatever God has planned for me</td>
+            </tr>
+        </table>
+    </div>
+    <h2>My Education</h2>
+    <div class="card">
+        <img src="lyna piano.jpg" alt="Lyna playing piano">
+        <div class="card-content">
+            <h3>Personal Life</h3>
+            <p>I am the eldest of my siblings and I have three younger sisters. Me and my sisters are all capable
+                of playing musical instruments, and we all have experiences in playing in orchestras. Two of my sisters
+                can play the piano, one of them can play the guitar, and I can play the violin. Moreover,
+                I was active in my chess club, orchestra, stem events, and I was a librarian.
+                I often participate in competitions and events (willingly or unwillingly), but over the years
+                I've learnt to enjoy them for the experience it brings. 
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="violin solo.jpg" alt="Violin Keroncong">
+        <div class="card-content">
+            <h3>Violin</h3>
+            <p>I started learning the violin when I was 12 and had lessons up until I was 18. I ceased my lessons
+                because I was entering university. Being in university made it hard to continue my lessons as all my materials
+                and my violin were back in my hometown. I have a certification in ABRSM (Associated Board of the Royal Schools of Music)
+                and I have played in multiple events, including a wedding. I was also part of my school's orchestra
+                and I have played in many events and gain lots of new experiences.
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="jpnese buddy.jpg" alt="Japanese Language">
+        <div class="card-content">
+            <h3>Japanese Language</h3>
+            <p>I studied Science Stream Stem B in high school, and had the opportunity to learn Japanese.
+                I have a UPBA (Ujian Pentaksiran Bahasa Asing) certificate for the subject and have been part of
+                a student-exchange programme. I met the kindest people from that programme and we still keep in touch
+                from time to time. Even though I am not actively learning Japanese at the moment, I still try to
+                keep up with the language by watching anime and reading books in Japanese. 
+                <i>Below is a snippet of one of my Japanese videos from high school.</i> 
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <video controls>
+            <source src="nihonvid.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <footer>
+        <p>Copyright © 2026 Ellysha. All rights reserved.</p>
+    </footer>
+</body>
+</html>

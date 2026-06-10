@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIES/TV</title>
+    <link rel="icon" type="image/x-icon" href="エビちゅ イコニック.png">
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+            margin-top: 0px;
+            background-color: #fdf5e6;
+            color: black;
+        }
+        
+        .banner {
+            background: linear-gradient(90deg, #b088be, #a674ca);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5em;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #b088be;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            z-index: 1000;
+        }
+
+        .sidenav a {
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #3c3c3c;
+            display: block;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .sidenav a:hover {
+            background: linear-gradient(90deg, #912f50, #522b47);
+            color: white;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            background-color: #b088be;
+            margin-left: 20px;
+        }
+
+        .dropdown-content a {
+            font-size: 16px;
+            padding: 8px 20px;
+            color: #3c3c3c;
+        }
+
+        .dropdown-content a:hover {
+            background: linear-gradient(90deg, #912f50, #522b47);
+            color: white;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #b088be;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1100;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .sidenav a {
+                font-size: 16px;
+            }
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .card-text {
+            text-align: center;
+            color: black;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: row;
+            background-color: #fafafa;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 30px auto;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 200px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-content h3 {
+            margin: 0 0 10px;
+            font-size: 1.5em;
+            color: black;
+        }
+
+        .card-content p {
+            margin: 0;
+            color: black;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 500px) {
+            .card {
+                flex-direction: column;
+            }
+            .card img {
+                width: 100%;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: #b088be;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">🍓Ellysha's Abode🍓</div>
+    <button class="openbtn" onclick="openNav()">☰</button>
+    <div id="mySidenav" class="sidenav">
+        <span class="closebtn" onclick="closeNav()">&times;</span>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <div class="dropdown">
+        <a href="hobbies.html">Hobbies ▼</a>
+            <div class="dropdown-content">
+                <a href="reading.html">Reading</a>
+                <a href="movies.html">Movies</a>
+                <a href="newthings.html">Trying New Things</a>
+            </div>
+        </div>
+        <a href="favourites.html">My Favourites</a>
+    </div>
+
+    <h1>Movies / TV Series / Anime / K-dramas / J-dramas</h1>
+    <p>I watch almost anything</p>
+    <div class="card">
+        <img src="formula1.jpeg" alt="Watching tv in bed">
+        <div class="card-content">
+            <h3>Movies</h3>
+            <p>I mainly watch movies in English but occasionally I'll watch it in other languages if people
+                recommend them to me or I find them interesting. I am willing to watch movies in a variety of genres, except
+                horror. And I'm one of those people who put on English subtitles when watching English movies.
+            </p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="pwmov.jpg" alt="toto Wolff in the F1 movie">
+        <div class="card-content">
+            <h3>TV Series</h3>
+            <p>I will refuse to watch TV series with more than 4 seasons. Anything more than that feels so overwhelming,
+                especially if one season has up to 20 episodes. I might commit if I have watched the series
+                right from season 1 and follow up as it gets renewed for a new season. And I will definitely
+                watch it if it was adapted from a book.
+        </div>
+    </div>
+    <div class="card">
+        <img src="tvwatching.jpg" alt="Watching tv in bed">
+        <div class="card-content">
+            <h3>Anime</h3>
+            <p>I started watching anime around the same time I started learning Japanese. It started as a way to
+                improve my vocabulary and pronounciation, but I started to love them when my friend began recommending
+                me animes to watch. Among them are Bungo Stray Dogs, My Happy Marriage, and The Apothecary Diaries.
+            </p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="toto.jpg" alt="Watching tv in bed">
+        <div class="card-content">
+            <h3>K-dramas</h3>
+            <p>The long episode duration is often the thing that stands between me finishing a series or absolutely
+                dropping it. This is often the case with K-dramas when one episode is an hour long so it takes me a while to get
+                through them. When it comes to k-dramas, i mainly watch romances as they are enjoyable and they
+                never fail to make me swoon. But as of right now, I'm trying to delve into C-dramas.
+            </p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="normal people.jpg" alt="Watching tv in bed">
+        <div class="card-content">
+            <h3>J-drama</h3>
+            <p>I started watching J-dramas for the same reason I started watching anime: to enhance my Japanese
+                language skills. Because my Japanese teacher advised me that if I truly wanted to improve my skills, 
+                I should watch J-dramas because the pronounciation and slang spoken between actors in a movie or series 
+                was much better than animes as the voice acting in animes are frequently exaggerated. Some great J-dramas
+                and movies I've watched are Your Eyes Tell, And Yet, You are so Sweet, and A Calm Sea and Beautiful Days with You.
+            </p>
+        </div>
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <footer>
+        <p>Copyright © 2026 Ellysha. All rights reserved.</p>
+    </footer>
+</body>
+</html>

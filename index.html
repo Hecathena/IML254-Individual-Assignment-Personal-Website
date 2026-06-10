@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT ME</title>
+    <link rel="icon" type="image/x-icon" href="エビちゅ イコニック.png">
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+            margin-top: 0px;
+            background-color: #fdf5e6;
+            color: black;
+        }
+
+        .banner {
+            background: linear-gradient(90deg, #b088be, #a674ca);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5em;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #b088be;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            z-index: 1000;
+        }
+
+        .sidenav a {
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #3c3c3c;
+            display: block;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .sidenav a:hover {
+            background: linear-gradient(90deg, #912f50, #522b47);
+            color: white;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            background-color: #b088be;
+            margin-left: 20px;
+        }
+
+        .dropdown-content a {
+            font-size: 16px;
+            padding: 8px 20px;
+            color: #3c3c3c;
+        }
+
+        .dropdown-content a:hover {
+            background: linear-gradient(90deg, #912f50, #522b47);
+            color: white;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #b088be;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1100;
+        }
+
+        @media screen and (max-width: 600px) {
+            .sidenav a {
+                font-size: 16px;
+            }
+        }
+
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("horizontal strawberry edited.jpg");
+            height: 90vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        .hero-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+
+        .articles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .articles article {
+            background: #fafafa;
+            border: 1px solid #eee;
+            padding: 15px;
+        }
+
+        .articles img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .card-button {
+            background-color: white;
+            border: 2px solid #912f50;
+            color: black;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 8px; 
+            cursor: pointer;
+            transition: background-color 0.4s, color 0.4s;
+            margin-top: 10px;
+        }
+
+        .card-button:hover {
+            background-color: #912f50;
+            color: white;
+        }
+
+        .spirit-card {
+            margin: 40px auto;
+            width: 300px;
+            background: #fafafa;
+            border-radius: 14px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.06), 0 6px 16px rgba(0,0,0,0.1);
+            border: 2px solid rgba(176, 136, 190, 0.653);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .spirit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08), 0 12px 28px rgba(0,0,0,0.16);
+        }
+
+        .card-title {
+            margin-top: 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: black;
+        }
+
+        .card-text {
+            color: black;
+            line-height: 1.5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: #b088be;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">🍓Ellysha's Abode🍓</div>
+    <button class="openbtn" onclick="openNav()">☰</button>
+    <div id="mySidenav" class="sidenav">
+        <span class="closebtn" onclick="closeNav()">&times;</span>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <div class="dropdown">
+        <a href="hobbies.html">Hobbies ▼</a>
+            <div class="dropdown-content">
+                <a href="reading.html">Reading</a>
+                <a href="movies.html">Movies</a>
+                <a href="newthings.html">Trying New Things</a>
+            </div>
+        </div>
+        <a href="favourites.html">My Favourites</a>
+        
+    </div>
+    <div class="hero-image">
+        <div class="hero-text">
+                <h1 style="font-size:50px">Hi! I'm Ellysha</h1>
+                <p style="font-size:22px">I'm an avid reader, a matcha lover, and am well-versed in the art of complaining (things will be done on time but trust me, I will complain first).</p>
+        </div>
+    </div>
+    <h1>Welcome to my website!</h1>
+    <p>Here, you'll find things about me, my interests, and my life. It might bore you a bit but I hope you enjoy browsing!</p>
+
+    <section class="articles">
+        <article>
+            <img src="me journal 4.jpg" alt="Profile image">
+            <h3>Everything there is to know about me</h3>
+            <p>Read more on where I grew up, my education, and a little about my family.</p>
+            <button class="card-button" onclick="location.href='profile.html'">PROFILE</button>
+        </article>
+        <article>
+            <img src="s&d in hs.jpg" alt="Hobbies image">
+            <h3>My hobbies and interests</h3>
+            <p>Discover what I love to do in my free time, from reading to exploring new places.</p>
+            <button class="card-button" onclick="location.href='hobbies.html'">HOBBIES</button>
+        </article>
+        <article>
+            <img src="lucy 2.jpg" alt="Favourites image">
+            <h3>A list of my favourites</h3>
+            <p>I like a lot of things (as it turns out I'm easily impressed), but these are just my favourites of them all.</p>
+            <button class="card-button" onclick="location.href='favourites.html'">MY FAVOURITES</button>
+        </article>
+    </section>
+
+    <div class="spirit-card">
+        <h3 class="card-title">My Spirit Animal</h3>
+        <img src="エビちゅ イコニック.png" width="300">
+        <p class="card-text">(A photo of me struggling)</p>
+    </div>
+
+    <div class="spirit-card">
+        <h3 class="card-title">Music I'm currently listening on repeat</h3>
+        <img src="revolving door cover.png" width="170">
+        <p class="card-text">Revolving Door - Tate McRae</p>
+        <audio controls>
+            <source src="Revolving Door - Tate McRae.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
+        <p>Or you can listen to it on YouTube <a href="https://youtu.be/-62V1vpMLZ0?si=TKOJwPx2MfCiWwUx" target="_blank">here</a></p>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <footer>
+        <p>Copyright © 2026 Ellysha. All rights reserved.</p>
+    </footer>
+</body>
+</html>

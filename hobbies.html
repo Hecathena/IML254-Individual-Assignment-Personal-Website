@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="エビちゅ イコニック.png">
+    <title>HOBBIES</title>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+            margin-top: 0px;
+            background-color: #fdf5e6;
+            color: black;
+        }
+        
+        .banner {
+            background: linear-gradient(90deg, #b088be, #a674ca);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5em;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #b088be;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            z-index: 1000;
+        }
+
+        .sidenav a {
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #3c3c3c;
+            display: block;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .sidenav a:hover {
+            background: linear-gradient(90deg, #912f50, #522b47);
+            color: white;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            background-color: #b088be;
+            margin-left: 20px;
+        }
+
+        .dropdown-content a {
+            font-size: 16px;
+            padding: 8px 20px;
+            color: #3c3c3c;
+        }
+
+        .dropdown-content a:hover {
+            background: linear-gradient(90deg, #912f50, #522b47);
+            color: white;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #b088be;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1100;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .sidenav a {
+                font-size: 16px;
+            }
+        }
+
+        .articles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .articles article {
+            background: #fafafa;
+            border: 1px solid #eee;
+            padding: 15px;
+        }
+
+        .articles img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .card-button {
+            background-color: white;
+            border: 2px solid #912f50;
+            color: black;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 8px; 
+            cursor: pointer;
+            transition: background-color 0.4s, color 0.4s;
+            margin-top: 10px;
+        }
+
+        .card-button:hover {
+            background-color: #912f50;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: #b088be;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">🍓Ellysha's Abode🍓</div>
+    <button class="openbtn" onclick="openNav()">☰</button>
+    <div id="mySidenav" class="sidenav">
+        <span class="closebtn" onclick="closeNav()">&times;</span>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <div class="dropdown">
+        <a href="hobbies.html">Hobbies ▼</a>
+            <div class="dropdown-content">
+                <a href="reading.html">Reading</a>
+                <a href="movies.html">Movies</a>
+                <a href="newthings.html">Trying New Things</a>
+            </div>
+        </div>
+        <a href="favourites.html">My Favourites</a>
+    </div>
+
+    <h1>Things I love to do in my free time</h1>
+    <p>These activities bring me immense joy</p>
+    
+    <section class="articles">
+        <article>
+            <img src="emilyhenry.jpg" alt="books image">
+            <h3>Reading!!</h3>
+            <p>I've read over 500 books.</p>
+            <button class="card-button" onclick="location.href='reading.html'">READING</button>
+        </article>
+        <article>
+            <img src="tvwatching.jpg" alt="Watching tv">
+            <h3>Watching movies</h3>
+            <p>I watch movies, tv series, anime, k-drama, j-drama.</p>
+            <button class="card-button" onclick="location.href='movies.html'">MOVIES</button>
+        </article>
+        <article>
+            <img src="cheesy fries.jpg" alt="Cheesy fries">
+            <h3>I love trying new things</h3>
+            <p>From big things to small things. As long as it's a novel experience for me.</p>
+            <button class="card-button" onclick="location.href='newthings.html'">TRYING NEW THINGS</button>
+        </article>
+        
+    </section>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <footer>
+        <p>Copyright © 2026 Ellysha. All rights reserved.</p>
+    </footer>
+</body>
+</html>

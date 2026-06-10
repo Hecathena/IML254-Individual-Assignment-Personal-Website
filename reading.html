@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>READING</title>
+    <link rel="icon" type="image/x-icon" href="エビちゅ イコニック.png">
+    <style>
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-align: center;
+            margin-top: 0px;
+            background-color: #fdf5e6;
+            color: black;
+        }
+        
+        .banner {
+            background: linear-gradient(90deg, #b088be, #a674ca);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.5em;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #b088be;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            z-index: 1000;
+        }
+
+        .sidenav a {
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #3c3c3c;
+            display: block;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .sidenav a:hover {
+            background: linear-gradient(90deg, #912f50, #522b47);
+            color: white;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            background-color: #b088be;
+            margin-left: 20px;
+        }
+
+        .dropdown-content a {
+            font-size: 16px;
+            padding: 8px 20px;
+            color: #3c3c3c;
+        }
+
+        .dropdown-content a:hover {
+            background: linear-gradient(90deg, #912f50, #522b47);
+            color: white;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 36px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #b088be;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1100;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .sidenav a {
+                font-size: 16px;
+            }
+        }
+
+        .spirit-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto; /* center the whole grid */
+        }
+
+        .spirit-card {
+            background: #fafafa;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .spirit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+        }
+
+        .spirit-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .card-text {
+            text-align: center;
+            color: black;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: row;
+            background-color: #fafafa;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 30px auto;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 200px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-content h3 {
+            margin: 0 0 10px;
+            font-size: 1.5em;
+            color: black;
+        }
+
+        .card-content p {
+            margin: 0;
+            color: black;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 500px) {
+            .card {
+                flex-direction: column;
+            }
+            .card img {
+                width: 100%;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: #b088be;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">🍓Ellysha's Abode🍓</div>
+    <button class="openbtn" onclick="openNav()">☰</button>
+    <div id="mySidenav" class="sidenav">
+        <span class="closebtn" onclick="closeNav()">&times;</span>
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <div class="dropdown">
+        <a href="hobbies.html">Hobbies ▼</a>
+            <div class="dropdown-content">
+                <a href="reading.html">Reading</a>
+                <a href="movies.html">Movies</a>
+                <a href="newthings.html">Trying New Things</a>
+            </div>
+        </div>
+        <a href="favourites.html">My Favourites</a>
+    </div>
+
+    <h1>Books are my entire personality</h1>
+    <p>They're also my first love</p>
+
+    <h3>Some of my favourite books</h3>
+    <div class="spirit-container">
+        <div class="spirit-card">
+            <img src="beach read.jpg" alt="Beach read" width="300">
+            <h3 class="card-title">Beach Read</h3>
+            <p class="card-text">- Emily Henry</p>
+        </div>
+        <div class="spirit-card">
+            <img src="addie larue.jpg" alt="Addie Larue">
+            <h3 class="card-title">The Invisible Life of Addie LaRue</h3>
+            <p class="card-text">- V. E. Schwab</p>
+        </div>
+        <div class="spirit-card">
+            <img src="veil6.jpg" alt="Veil 6">
+            <h3 class="card-title">Veil, volume 6: Untangled Rouge</h3>
+            <p class="card-text">- Kotteri</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="bookwall.jpg" alt="Bookwall">
+        <div class="card-content">
+            <p>I read a variety of books from different genres. Up to this point, I have read 512 books, from
+                multiple genres, such as Fantasy, Romantasy, Romance, Young Adult (YA), Thriller, and Non-fiction.
+                However I do not own that much because books are expensive so most were read online. 
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="emilyhenry.jpg" alt="Emily Henry">
+        <div class="card-content">
+            <p>My favourite author is Emily Henry. I own almost every book she has published. I discovered
+                her during the COVID-19 lockdown when I was bored out of my mind at home. I used the free time 
+                I had to read books from day to night until the sun was up and I didn't realised I stayed up reading.
+                It's also how I ended up wearing glasses :) I have short-sightedness because I used to get scolded
+                for reading way too late into the night so I read in the dark accompanied by a flashlight. 
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="summer.jpg" alt="Annotated cover">
+        <div class="card-content">
+            <p>I also like to draw inside the book titles and annotate my books. I don't use tabs or
+                sticky notes like some of my friends do because it would irritate me if the tabs weren't
+                centered. So I opted for pens and pencils and I underline quotes that stick out to me and
+                I use a pencil to jot down my thoughts while reading.
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="reading bed.jpg" alt="Reading in bed">
+        <div class="card-content">
+            <p>I have yet found a comfortable reading position that does not affect my posture.
+                God forbid I slouch in my 20s. But reading in bed while leaning agaisnt the headboard,  with my
+                blanket wrapped around me, and the AC blasting cool air, <i>is</i> undoutably the coziest
+                position yet.
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <footer>
+        <p>Copyright © 2026 Ellysha. All rights reserved.</p>
+    </footer>
+</body>
+</html>
